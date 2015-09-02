@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+  <context-param><!--环境参数,设置常量,取得常量  this.getInitParameter("context");-->
+    <param-name>context</param-name>
+    <param-value>D:\\Program Files\\eclipse\\eclipse.exe</param-value>
+  </context-param>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>fzglServlet</servlet-name>
+    <servlet-class>cetc.fzglServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>qbfzServlet</servlet-name>
+    <servlet-class>cetc.qbfzServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>qbkzServlet</servlet-name>
+    <servlet-class>cetc.qbkzServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>asd</servlet-name>
+    <servlet-class>asd</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>openEclipseServlet</servlet-name>
+    <servlet-class>cetc.openEclipseServlet</servlet-class>
+    <init-param><!--初始化参数,可以在init()中使用ServletConfig().getInitParamenter("name")取得-->
+      <param-name>eclipsePath</param-name>
+      <param-value>D:\\eclipse\\eclipse.exe</param-value>
+    </init-param>
+    
+    
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>openHighServiceServlet</servlet-name>
+    <servlet-class>cetc.openHighServiceServlet</servlet-class>
+    <init-param><!--初始化参数,可以在init()中使用ServletConfig().getInitParamenter("name")取得-->
+      <param-name>servicePath</param-name>
+      <param-value>D:\\myeclipsePro\\highService\\Surface.jar</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>openServicePackServlet</servlet-name>
+    <servlet-class>cetc.openServicePackServlet</servlet-class>
+    <init-param><!--初始化参数,可以在init()中使用ServletConfig().getInitParamenter("name")取得-->
+      <param-name>servicePackPath</param-name>
+      <param-value>D:\\myeclipsePro\\ServicePackaging\\CS\\ServicePackage_fat.jar</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>testVNC</servlet-name>
+    <servlet-class>cetc.testVNC</servlet-class>
+    <init-param><!--初始化参数,可以在init()中使用ServletConfig().getInitParamenter("name")取得-->
+      <param-name>vncPath</param-name>
+      <param-value>C:\\vnc.exe</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>openVNC1</servlet-name>
+    <servlet-class>cetc.openVNC1</servlet-class>
+    <init-param><!--初始化参数,可以在init()中使用ServletConfig().getInitParamenter("name")取得-->
+      <param-name>vncPath</param-name>
+      <param-value>C:\\vnc.exe</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>openVNC2</servlet-name>
+    <servlet-class>cetc.openVNC2</servlet-class>
+    <init-param><!--初始化参数,可以在init()中使用ServletConfig().getInitParamenter("name")取得-->
+      <param-name>vncPath</param-name>
+      <param-value>C:\\vnc.exe</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>updateConfXml</servlet-name>
+    <servlet-class>cetc.updateConfXml</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>openVNC_solid</servlet-name>
+    <servlet-class>cetc.openVNC_solid</servlet-class>
+    <init-param><!--初始化参数,可以在init()中使用ServletConfig().getInitParamenter("name")取得-->
+      <param-name>vncPath</param-name>
+      <param-value>C:\\vnc.exe</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>openToolsServlet</servlet-name>
+    <servlet-class>cetc.openToolsServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>fzglServlet</servlet-name>
+    <url-pattern>/fzgl.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>qbfzServlet</servlet-name>
+    <url-pattern>/qbfz.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>qbkzServlet</servlet-name>
+    <url-pattern>/qbkz.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>asd</servlet-name>
+    <url-pattern>/servlet/asd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>openEclipseServlet</servlet-name>
+    <url-pattern>/servlet/openEclipseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>openHighServiceServlet</servlet-name>
+    <url-pattern>/servlet/openHighServiceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>openServicePackServlet</servlet-name>
+    <url-pattern>/servlet/openServicePackServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>testVNC</servlet-name>
+    <url-pattern>/servlet/testVNC</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>openVNC1</servlet-name>
+    <url-pattern>/servlet/openVNC1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>openVNC2</servlet-name>
+    <url-pattern>/servlet/openVNC2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>updateConfXml</servlet-name>
+    <url-pattern>/servlet/updateConfXml</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>openVNC_solid</servlet-name>
+    <url-pattern>/servlet/openVNC_solid</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>openToolsServlet</servlet-name>
+    <url-pattern>/servlet/openToolsServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+</web-app>

@@ -1,0 +1,82 @@
+.wxh-spinner-size{
+	width: 80px;	
+}
+#wxh-login{
+	display: inline !important; 
+	float: right !important;
+	margin-top:  
+}
+.thead-font tr th{
+	font-family:  'Microsoft YaHei';
+	font-size:15px; 
+}
+.TitleLabel{
+	font-family:  'Microsoft YaHei';
+	font-size:30px; 
+	margin-top: 30px;
+	margin-left: 30px;
+	color:white;
+}
+#AdminInfo{
+	position:relative;
+	top:-30px;
+	
+}
+.zz-float{
+	position: relative !important;
+	left: 120px !important;
+	top: 15px !important;
+	font-family: "Microsoft YaHei";
+
+}
+aside{
+	background-image: url(../img/sider.png) !important;
+}
+#header{
+	background-image: url(../img/header.png) !important;
+}
+
+.form-group{
+	margin-bottom:25px;
+}
+
+.sw-title{
+	text-align:center;
+	font-size:20px;
+}
+
+.sw-img{
+	height:250px;
+}
+
+.bg_li {
+	width:100px;
+	height:45px;
+}
+/* .backpicture{
+	width: 1000px;
+	height: 730px;
+	margin: 0px auto;
+	background-image: url(../img/background.png);
+}
+.content_style{
+	font-size: 20px;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+} */
+/* .button_style{
+	margin-left: 15px;
+	width: 100px;
+}
+.table_style{
+	margin-left: 500px;
+	width: 1500px;	
+}
+.text_style{
+	margin-left: 15px;
+}
+.button_div{
+	margin-top: 7px;
+	margin-bottom: 7px;
+} */
+

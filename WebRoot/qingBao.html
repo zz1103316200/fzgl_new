@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+		<title> 系统开发实验平台</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Use the correct meta names below for your web application
+			 Ref: http://davidbcalhoun.com/2010/viewport-metatag 
+			 
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">-->
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.css">
+
+		<!-- SmartAdmin RTL Support is under construction
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.css"> -->
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.css">
+
+		<!-- FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		
+		<!-- 自己加的 -->
+		 <link rel="stylesheet" type="text/css" media="screen" href="css/wxh.css"> 
+		
+		<!-- GOOGLE FONT -->
+		<!--  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">-->
+		<style>
+		body{
+			font-family: "Microsoft YaHei" !important;
+		}
+		.node {
+		  stroke: #fff;
+		  stroke-width: 1.5px;
+		}
+		
+		.link {
+		  stroke: #999;
+		  stroke-opacity: .6;
+		}
+		
+		svg{
+			/*background-color:black;*/
+		}
+		
+		</style>
+	</head>
+	<body class="">
+		<!-- possible classes: minified, fixed-ribbon, fixed-header, fixed-width-->
+
+		<header id="header" style="height:100px;">
+			<div id="logo-group" style="width:100%;">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo" style="width:350px;color:white;font-size:21px;font-family:  'Microsoft YaHei' ;"> <img src="img/school.png" alt="SmartAdmin" style="height:80px;width:80px;">    系统开发实验平台</span>
+				<!-- END LOGO PLACEHOLDER -->
+
+				<!-- Note: The activity badge color changes when clicked and resets the number to 0
+				Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+				<span id="activity" class="activity-dropdown" style="margin-top:40px;float:right;position:relative;left:-120px;"> <i class="glyphicon glyphicon-bell txt-color-blue"></i> <b class="badge"> 21 </b> </span>
+
+				<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+				<div class="ajax-dropdown" style="margin-left:79%;margin-top:20px;">
+
+					<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+					<div class="btn-group btn-group-justified" data-toggle="buttons">
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/mail.html">
+							Msgs (14) </label>
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/notifications.html">
+							notify (3) </label>
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/tasks.html">
+							Tasks (4) </label>
+					</div>
+
+					<!-- notification content -->
+					<div class="ajax-notifications custom-scroll">
+
+						<div class="alert alert-transparent">
+							<h4>Click a button to show messages here</h4>
+							This blank page message helps protect your privacy, or you can show the first message here automatically.
+						</div>
+
+						<i class="fa fa-lock fa-4x fa-border"></i>
+
+					</div>
+					<!-- end notification content -->
+
+					<!-- footer: refresh area -->
+					<span> Last updated on: 12/12/2013 9:43AM
+						<button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
+							<i class="fa fa-refresh"></i>
+						</button> </span>
+					<!-- end footer -->
+
+				</div>
+				<label class="TitleLabel">情报用户编辑</label>
+				<!-- END AJAX-DROPDOWN -->
+			</div>
+
+			<!-- projects dropdown -->
+			
+			<!-- end projects dropdown -->
+
+			
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+
+				<!-- collapse menu button -->
+				
+				<!-- end collapse menu -->
+
+				<!-- logout button -->
+				
+				<!-- end logout button -->
+
+				<!-- search mobile button (this is hidden till mobile view port) -->
+				
+				<!-- end search mobile button -->
+
+				<!-- input: search field -->
+				
+				<!-- end input: search field -->
+
+				<!-- multiple lang dropdown : find all flags in the image folder -->
+				<ul class="header-dropdown-list hidden-xs" id="AdminInfo">
+					<li>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="img/avatar3_small.jpg"> <span> Admin </span> <i class="fa fa-angle-down"></i> </a>
+						<ul class="dropdown-menu pull-right">
+							<li>
+								<a href="javascript:void(0);"><i class="fa fa-move"></i>&nbsp;&nbsp;全屏 </a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><i class="fa fa-lock"></i>&nbsp;&nbsp;&nbsp;锁定屏幕 </a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><i class="fa fa-key"></i>&nbsp;&nbsp;退出 </a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!-- end multiple lang -->
+
+			</div>
+			
+			
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- END HEADER -->
+
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<!-- <aside id="left-panel" style="top:100px;min-height:877px !important;">
+			<nav>     
+				<ul>
+					<li>
+						<a href="leiDa.html"><i class="fa fa-lg fa-fw fa-sitemap"></i> <span class="menu-item-parent" style="font-size:16px;">雷达情报服务</span></a>
+					</li>
+					<li  >
+						<a href="dianZhen.html"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent" style="font-size:16px;">电针情报服务</span></a>
+						<ul>
+							<li class="active">
+								<a href="serviceInfo.html">服务信息</a>
+							</li>
+							<li>
+								<a href="nodeInfo.html">节点信息</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="jiZhen.html"><i class="fa fa-lg fa-fw fa-exclamation-triangle"></i> <span class="menu-item-parent" style="font-size:16px;">技侦情报服务</span></a>
+					</li>
+					<li>
+						<a href="xiangDing.html"><i class="fa fa-lg fa-fw fa-gear"></i> <span class="menu-item-parent" style="font-size:16px;">想定编辑</span></a>
+					</li>
+					<li>
+						<a href="qingBao.html"><i class="fa fa-lg fa-fw fa-gear"></i> <span class="menu-item-parent" style="font-size:16px;">情报用户编辑</span></a>
+					</li>
+					<li>
+						<a href="fangZhen.html"><i class="fa fa-lg fa-fw fa-gear"></i> <span class="menu-item-parent" style="font-size:16px;">仿真控制</span></a>
+					</li>
+				</ul>
+			</nav>
+			<span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+
+		</aside>
+		END NAVIGATION -->
+
+
+		<!-- MAIN PANEL -->
+		<div role="main" style="font-family:'Microsoft YaHei'">
+			<!-- MAIN CONTENT -->
+			<div id="content">
+				<section id="widget-grid" class="">
+				
+					<div class="row">
+						<div class="jarviswidget jarviswidget-color-darken" data-widget-editbutton="false" data-widget-deletebutton="false">
+					<header>
+						<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+						<h2 style="font-family:'Microsoft YaHei';">情报用户编辑</h2>
+					</header>
+					<!-- widget div-->
+					<div>
+						<div class="row">			
+						<!-- NEW WIDGET START -->			
+										<form class="form-horizontal" id="form5">	
+											<fieldset>
+												<div class="col-md-6">	
+													<div class="form-group">
+													<label class="col-md-3 control-label">选择方案</label>
+													<div class="col-md-9" id="qingBao_plan">
+														<label class="radio radio-inline">														
+															<input type="radio" class="radiobox" id="new_plan" name="style-0a" onClick="changeFangan(1)" value="new" checked="checked">
+															<span>新建方案</span> 															
+														</label>
+														<label class="radio radio-inline">
+															<input type="radio" class="radiobox" id="old_plan" name="style-0a" onClick="changeFangan(2)" value="old">
+															<span>已有方案</span> 
+														</label>
+													</div>
+												</div>
+											</div>
+												</fieldset>								
+											<fieldset>
+												<div class="row">
+												<div class="col-md-6">							
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="select-1">方案名称</label>
+													<div class="col-md-9">
+														<select class="form-control" id="fangan" disabled onChange="fanganChange(this.value)">
+														</select> 				
+													</div>
+												</div>
+											</div>	
+												<div class="col-md-6">											
+												<div class="form-group">
+													<label class="col-md-3 control-label">用户资料</label>
+													<div class="col-md-9">
+														<input class="form-control" id="qingBao_user" placeholder="Default Text Field" type="text">
+													</div>
+												</div>
+											</div>
+											
+											</div>
+											<div class="row">	
+												<div class="col-md-6">							
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="select-1">想定文件</label>
+													<div class="col-md-9">
+														<select class="form-control" id="select-1">
+															<!-- <option selected>想定1.xml</option>
+						                                    <option>想定2.xml</option>
+						                                    <option>想定3.xml</option> -->
+														</select> 				
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="col-md-3 control-label">方案名称</label>
+													<div class="col-md-9">
+														<input class="form-control" id="qingBao_name" placeholder="Default Text Field" type="text">
+													</div>
+												</div>
+											</div>
+											</div>
+											</fieldset>
+											<div class="form-actions">
+												<div class="row">
+													<div class="col-md-12">
+														<a id="button_submit" onClick="submitFangan()" class="btn btn-lg btn-primary">Submit</a>														
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+					</div>
+						<!-- end widget edit box -->																				
+						<!-- widget content -->
+						<div class="widget-body">
+							<table id="table1" class="table table-striped table-bordered table-hover" style="font-family:  'Microsoft YaHei';font-size:15px; " style="text-align:center">
+								<thead class="thead-font">
+									<tr>
+										<th  style="text-align:center">模拟器类型</th>
+										<th style="text-align:center">模拟器站号</th>
+										<th style="text-align:center">经度(°)</th>
+										<th style="text-align:center">纬度(°)</th>
+										<th style="text-align:center">高度（米）</th>
+										<th style="text-align:center">情报格式</th>
+										<th style="text-align:center">传输协议</th>
+										<th style="text-align:center">目标IP地址</th>
+										<!-- <th width="20%"style="text-align:center">操作</th> -->
+									</tr>
+								</thead>
+								<tbody class="tbody-font" id="leiDatable">
+								</tbody>
+							</table>
+						</div>
+						<!-- end widget content -->
+
+					</div>
+					<!-- end widget div -->
+
+				</div>
+					</div>
+								
+				</section>
+				<!-- end widget grid -->
+
+			</div>
+			<!-- END MAIN CONTENT -->
+
+		</div>
+		<!-- END MAIN PANEL -->
+
+		<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+		Note: These tiles are completely responsive,
+		you can add as many as you like
+		-->
+		<div id="shortcut">
+			<ul>
+				<li>
+					<a href="#inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+				</li>
+				<li>
+					<a href="#gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+				</li>
+				<li>
+					<a href="#invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+				</li>
+			</ul>
+		</div>
+		<!-- END SHORTCUT AREA -->
+
+		<!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+	    <script src="js/libs/jquery-2.0.2.min.js"></script>
+
+		<script src="js/libs/jquery-ui-1.10.3.min.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+
+		<!-- BOOTSTRAP JS -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="js/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices -->
+		<script src="js/plugin/fastclick/fastclick.js"></script>
+
+		<!--[if IE 7]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- Demo purpose only -->
+		<script src="js/demo.js"></script>
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.js"></script>
+
+		<!-- PAGE RELATED PLUGIN(S)
+		<script src="..."></script> -->
+		
+
+		<script src="javascript/qingBao.js" type="text/javascript"></script>
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+
+
+	</body>
+
+</html>
